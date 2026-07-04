@@ -88,12 +88,12 @@ function Hero() {
           <div className="hero-stats">
 
             <div>
-              <h2>15+</h2>
+              <h2>4+</h2>
               <span>Projects</span>
             </div>
 
             <div>
-              <h2>3+</h2>
+              <h2>2+</h2>
               <span>Years Learning</span>
             </div>
 
