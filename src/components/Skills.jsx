@@ -1,4 +1,3 @@
-import { SiNodedotjs } from "react-icons/si";
 import { motion } from "framer-motion";
 import {
   FaReact,
@@ -8,10 +7,13 @@ import {
   FaBootstrap,
   FaPhp,
 } from "react-icons/fa";
+
 import {
   SiJavascript,
   SiMysql,
   SiCplusplus,
+  SiNodedotjs,
+  SiDotnet,
 } from "react-icons/si";
 
 function Skills() {
@@ -31,29 +33,21 @@ function Skills() {
 
   return (
     <section className="section" id="skills">
-
       <div className="section-heading">
-
-        <span className="section-tag">
-          MY SKILLS
-        </span>
+        <span className="section-tag">MY SKILLS</span>
 
         <h2>
-          Technologies I
-          <span> Work With</span>
+          Technologies I <span>Work With</span>
         </h2>
 
         <p>
           These are the technologies I use to build modern,
           responsive and scalable web applications.
         </p>
-
       </div>
 
       <div className="skills-grid">
-
         {skills.map((skill, index) => (
-
           <motion.div
             key={index}
             className="skill-card"
@@ -66,7 +60,6 @@ function Skills() {
               scale: 1.03,
             }}
           >
-
             <div className="skill-icon">
               {skill.icon}
             </div>
@@ -74,13 +67,9 @@ function Skills() {
             <h3>{skill.name}</h3>
 
             <span>{skill.level}</span>
-
           </motion.div>
-
         ))}
-
       </div>
-
     </section>
   );
 }
