@@ -26,6 +26,7 @@ function Skills() {
     { icon: <FaCss3Alt />, name: "CSS3", level: "Expert" },
     { icon: <FaBootstrap />, name: "Bootstrap", level: "Advanced" },
     { icon: <SiNodedotjs />, name: "Node.js", level: "Intermediate" },
+    { icon: <SiDotnet />, name: "ASP.NET Core", level: "Intermediate" },
   ];
 
   return (
