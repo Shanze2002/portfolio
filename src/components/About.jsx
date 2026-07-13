@@ -83,13 +83,13 @@ function About() {
         <div className="about-stats">
 
           <div>
-            <h3>10+</h3>
+            <h3>4+</h3>
             <span>Projects Built</span>
           </div>
 
 
           <div>
-            <h3>5+</h3>
+            <h3>15+</h3>
             <span>Technologies</span>
           </div>
 

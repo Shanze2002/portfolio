@@ -154,7 +154,7 @@ function Hero() {
 
             <div>
               <h2>
-                5+
+                15+
               </h2>
               <span>
                 Technologies
