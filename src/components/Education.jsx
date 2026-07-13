@@ -1,95 +1,132 @@
 import { motion } from "framer-motion";
 
 function Education() {
-  const education = [
+
+  const educationList = [
     {
+      title: "BSc in Software Engineering",
       institute: "ICBT Campus",
-      period: "2026 - Present",
-      course: "BSc in Software Engineering",
-      status: "Continuing",
-      desc: "Currently pursuing a Bachelor’s degree in Software Engineering, focusing on advanced software development, full-stack web technologies, database systems, and software architecture through academic and practical projects.",
+      year: "2026 - Present",
+      status: "Currently Studying",
+      description:
+        "Currently following a BSc in Software Engineering while improving my skills in full-stack development, software design, databases, and building practical software solutions."
     },
     {
+      title: "Higher Diploma in Software Engineering",
       institute: "ICBT Campus",
-      period: "2024 - 2026",
-      course: "Higher Diploma in Software Engineering",
+      year: "2024 - 2026",
       status: "Completed",
-      desc: "Completed Higher Diploma in Software Engineering with strong foundations in programming, web development, database management, and software engineering principles.",
+      description:
+        "Completed Higher Diploma in Software Engineering with hands-on experience in programming, web application development, database management, and software engineering concepts."
     },
     {
+      title: "AAT Qualification - Level 2",
       institute: "Association of Accounting Technicians (AAT)",
-      period: "2018 - 2021",
-      course: "AAT Qualification (Level 2)",
+      year: "2018 - 2021",
       status: "Completed",
-      desc: "Gained knowledge in financial accounting, bookkeeping, and business management fundamentals.",
-    },
+      description:
+        "Studied accounting fundamentals including financial accounting, bookkeeping, and business management, which helped me develop analytical and problem-solving skills."
+    }
   ];
+
 
   return (
     <section id="education" className="section education-section">
 
       <div className="section-heading">
-        <span className="section-tag">ACADEMIC</span>
+
+        <span className="section-tag">
+          EDUCATION
+        </span>
 
         <h2>
-          Education <span>Journey</span>
+          My Learning <span>Journey</span>
         </h2>
 
         <p>
-          My academic path from accounting fundamentals to advanced software engineering studies.
+          My educational journey from accounting studies to software engineering.
         </p>
+
       </div>
+
 
       <div className="timeline">
 
-        {education.map((edu, index) => (
+        {educationList.map((item, index) => (
+
           <motion.div
             key={index}
             className="timeline-item"
-            initial={{ opacity: 0, x: index % 2 === 0 ? -60 : 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            initial={{
+              opacity: 0,
+              y: 40
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0
+            }}
+            viewport={{
+              once: true
+            }}
+            transition={{
+              duration: 0.5,
+              delay: index * 0.1
+            }}
           >
 
             <div className="timeline-dot"></div>
+
 
             <div className="timeline-content education-card">
 
               <div className="edu-header">
 
                 <div>
-                  <h3>{edu.institute}</h3>
-                  <span className="edu-course">{edu.course}</span>
+
+                  <h3>
+                    {item.institute}
+                  </h3>
+
+                  <span className="edu-course">
+                    {item.title}
+                  </span>
+
                 </div>
+
 
                 <div className="edu-meta">
 
-                  <span className={`edu-status ${edu.status.toLowerCase()}`}>
-                    {edu.status}
+                  <span className="edu-status">
+                    {item.status}
                   </span>
 
+
                   <span className="edu-period">
-                    {edu.period}
+                    {item.year}
                   </span>
 
                 </div>
 
               </div>
 
+
               <p className="edu-desc">
-                {edu.desc}
+                {item.description}
               </p>
+
 
             </div>
 
           </motion.div>
+
         ))}
 
       </div>
 
+
     </section>
   );
 }
+
 
 export default Education;

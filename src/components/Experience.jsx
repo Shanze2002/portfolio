@@ -1,107 +1,170 @@
 import { motion } from "framer-motion";
 
 function Experience() {
-  const experiences = [
+
+  const experienceList = [
     {
-      role: "Assistant Manager",
-      company: "Retail Operations",
-      period: "2024 - 2025",
-      type: "Leadership Role",
-      desc: "Managed daily operations, coordinated team workflows, and improved customer satisfaction through structured process optimization.",
-      points: [
-        "Led and coordinated team activities",
-        "Improved operational efficiency",
-        "Handled customer escalations",
-        "Ensured service quality standards",
-      ],
+      position: "Assistant Manager",
+      company: "Aramco Agency",
+      duration: "2024 - 2025",
+      category: "Management Experience",
+      description:
+        "Worked as an Assistant Manager, supporting daily business operations, managing team activities, and improving customer service processes.",
+      responsibilities: [
+        "Managed daily operational activities",
+        "Coordinated team tasks and workflow",
+        "Handled customer concerns and service improvements",
+        "Supported decision-making and business operations"
+      ]
     },
     {
-      role: "Customer Care Executive",
-      company: "Service Support Center",
-      period: "2021 - 2024",
-      type: "Customer Support",
-      desc: "Provided technical support and customer assistance in a fast-paced environment while improving communication and problem-solving skills.",
-      points: [
-        "Resolved customer technical issues",
-        "Handled high-volume support requests",
-        "Improved customer communication",
-        "Maintained service response quality",
-      ],
-    },
+      position: "Customer Care Executive",
+      company: "Aramco Agency",
+      duration: "2021 - 2024",
+      category: "Customer Service",
+      description:
+        "Worked with customers by providing support, solving issues, and maintaining positive communication to deliver better service experiences.",
+      responsibilities: [
+        "Handled customer inquiries and requests",
+        "Resolved customer-related issues efficiently",
+        "Improved communication and problem-solving skills",
+        "Maintained customer service standards"
+      ]
+    }
   ];
 
+
   return (
-    <section id="experience" className="section experience-section">
+    <section 
+      id="experience" 
+      className="section experience-section"
+    >
+
 
       <div className="section-heading">
-        <span className="section-tag">CAREER</span>
+
+        <span className="section-tag">
+          EXPERIENCE
+        </span>
+
 
         <h2>
-          Work <span>Experience</span>
+          Professional <span>Experience</span>
         </h2>
 
+
         <p>
-          My professional journey combining leadership, communication,
-          and problem-solving experience in real-world environments.
+          My work experience helped me develop leadership, communication,
+          teamwork, and problem-solving skills.
         </p>
+
       </div>
+
+
 
       <div className="timeline">
 
-        {experiences.map((exp, index) => (
+
+        {experienceList.map((experience, index) => (
+
           <motion.div
             key={index}
             className="timeline-item"
-            initial={{ opacity: 0, x: index % 2 === 0 ? -60 : 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            initial={{
+              opacity: 0,
+              y: 40
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0
+            }}
+            viewport={{
+              once: true
+            }}
+            transition={{
+              duration: 0.5,
+              delay: index * 0.1
+            }}
           >
+
 
             <div className="timeline-dot"></div>
 
+
+
             <div className="timeline-content experience-card">
+
 
               <div className="exp-header">
 
+
                 <div>
-                  <h3>{exp.role}</h3>
-                  <span className="exp-company">{exp.company}</span>
+
+                  <h3>
+                    {experience.position}
+                  </h3>
+
+
+                  <span className="exp-company">
+                    {experience.company}
+                  </span>
+
                 </div>
+
+
 
                 <div className="exp-meta">
 
                   <span className="exp-type">
-                    {exp.type}
+                    {experience.category}
                   </span>
 
+
                   <span className="exp-period">
-                    {exp.period}
+                    {experience.duration}
                   </span>
 
                 </div>
 
+
               </div>
 
+
+
               <p className="exp-desc">
-                {exp.desc}
+                {experience.description}
               </p>
 
+
+
               <ul className="exp-list">
-                {exp.points.map((p, i) => (
-                  <li key={i}>{p}</li>
+
+                {experience.responsibilities.map((item, index) => (
+
+                  <li key={index}>
+                    {item}
+                  </li>
+
                 ))}
+
               </ul>
+
+
 
             </div>
 
+
           </motion.div>
+
         ))}
 
+
       </div>
+
 
     </section>
   );
 }
+
 
 export default Experience;

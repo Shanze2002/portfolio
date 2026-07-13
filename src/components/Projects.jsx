@@ -1,138 +1,269 @@
 import { motion } from "framer-motion";
 
 function Projects() {
-  const projects = [
+
+  const projectList = [
     {
-      title: "CV Analyzer System",
-      period: "2025",
-      desc: "AI-assisted system that extracts skills, experience and generates candidate insights from CVs.",
-      points: [
-        "Automated CV parsing & data extraction",
-        "Skill & experience classification engine",
-        "Smart candidate summary generation",
-        "Improved recruitment decision workflow",
+      name: "CV Analyzer System",
+      year: "2025",
+      category: "AI Based System",
+      description:
+        "An AI-based recruitment support system that analyzes CV information and provides useful insights about candidate skills and experience.",
+      features: [
+        "Extracted important information from CV documents",
+        "Analyzed skills and candidate details",
+        "Generated candidate summaries",
+        "Improved the recruitment review process"
       ],
-      tech: ["React", "Node.js", "Express", "MySQL"],
-      type: "AI System",
+      technologies: [
+        "React",
+        "Node.js",
+        "Express",
+        "MySQL"
+      ]
     },
+
+
     {
-      title: "Inventory Management System",
-      period: "2024",
-      desc: "Full-stack system for managing stock, products, sales and reporting dashboard.",
-      points: [
-        "Real-time stock management system",
-        "Product CRUD with validation",
-        "Admin analytics dashboard",
-        "Sales tracking module",
+      name: "Inventory Management System",
+      year: "2024",
+      category: "Full Stack Application",
+      description:
+        "A full-stack inventory system developed to manage products, stock levels, sales records, and business reports.",
+      features: [
+        "Product and category management",
+        "Stock tracking functionality",
+        "Sales management module",
+        "Dashboard with system information"
       ],
-      tech: ["PHP", "MySQL", "Bootstrap", "JS"],
-      type: "Full Stack",
+      technologies: [
+        "React",
+        "Node.js",
+        "Express",
+        "MySQL"
+      ]
     },
+
+
     {
-      title: "Gym Management System",
-      period: "2024",
-      desc: "Web-based system for managing members, payments, and attendance.",
-      points: [
-        "Member registration system",
-        "Attendance tracking module",
-        "Payment management system",
-        "Admin control panel",
+      name: "Gym Management System",
+      year: "2024",
+      category: "Web Application",
+      description:
+        "A web-based gym management solution for handling members, payments, trainers, and daily gym operations.",
+      features: [
+        "Member registration management",
+        "Payment tracking system",
+        "Attendance management",
+        "Admin management panel"
       ],
-      tech: ["PHP", "MySQL", "HTML", "CSS"],
-      type: "Web App",
+      technologies: [
+        "PHP",
+        "MySQL",
+        "HTML",
+        "CSS",
+        "Bootstrap"
+      ]
     },
+
+
     {
-      title: "School Management System (Group Project)",
-      period: "2025",
-      desc: "A full-stack group project consisting of both web and mobile applications for managing school operations efficiently.",
-      points: [
-        "Developed as a team-based software engineering project",
-        "Built web application for admin, teachers, and student management",
-        "Developed mobile app for students and parents access",
-        "Implemented attendance, timetable, and result management system",
-        "Improved collaboration using Git version control",
+      name: "School Management System",
+      year: "2025",
+      category: "Group Project",
+      description:
+        "A team-based software project that includes web and mobile applications to manage school-related activities.",
+      features: [
+        "Developed features for students, teachers, and administrators",
+        "Implemented attendance and timetable management",
+        "Created mobile access for parents and students",
+        "Used Git for team collaboration"
       ],
-      tech: ["React", "PHP", "MySQL", "Flutter / Android (Mobile)", "Git"],
-      type: "Web & Mobile App",
+      technologies: [
+        "React",
+        "PHP",
+        "MySQL",
+        "Android",
+        "Git"
+      ]
     }
   ];
 
-  return (
-    <section id="projects" className="section projects-section">
 
-      {/* HEADER */}
+
+  return (
+    <section 
+      id="projects" 
+      className="section projects-section"
+    >
+
+
+
       <div className="section-heading">
-        <span className="section-tag">PORTFOLIO</span>
+
+
+        <span className="section-tag">
+          PROJECTS
+        </span>
+
+
 
         <h2>
-          Featured <span>Projects</span>
+          My Recent <span>Work</span>
         </h2>
 
+
+
         <p>
-          A collection of real-world systems built with modern technologies
-          focusing on performance, scalability, and clean UI.
+          Projects I have developed to improve my software development skills
+          and apply practical programming knowledge.
         </p>
+
+
       </div>
 
-      {/* TIMELINE WRAPPER */}
+
+
+
+
       <div className="projects-timeline">
 
-        {projects.map((project, index) => (
+
+        {projectList.map((project, index) => (
+
+
           <motion.div
+
             key={index}
+
             className="project-item"
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.15 }}
+
+            initial={{
+              opacity: 0,
+              y: 40
+            }}
+
+            whileInView={{
+              opacity: 1,
+              y: 0
+            }}
+
+            viewport={{
+              once: true
+            }}
+
+            transition={{
+              duration: 0.5,
+              delay: index * 0.1
+            }}
+
           >
 
-            {/* DOT */}
+
+
             <div className="project-dot"></div>
 
-            {/* CARD */}
+
+
+
+
             <div className="project-card">
+
+
 
               <div className="project-top">
 
+
                 <div>
-                  <h3>{project.title}</h3>
-                  <span className="project-type">{project.type}</span>
+
+                  <h3>
+                    {project.name}
+                  </h3>
+
+
+                  <span className="project-type">
+                    {project.category}
+                  </span>
+
+
                 </div>
 
+
+
                 <span className="project-year">
-                  {project.period}
+                  {project.year}
                 </span>
 
+
+
               </div>
+
+
+
+
 
               <p className="project-desc">
-                {project.desc}
+
+                {project.description}
+
               </p>
 
+
+
+
+
               <ul className="project-list">
-                {project.points.map((p, i) => (
-                  <li key={i}>{p}</li>
+
+                {project.features.map((feature, index) => (
+
+                  <li key={index}>
+                    {feature}
+                  </li>
+
                 ))}
+
               </ul>
 
+
+
+
+
               <div className="project-tech">
-                {project.tech.map((t, i) => (
-                  <span key={i} className="tech-badge">
-                    {t}
+
+                {project.technologies.map((technology, index) => (
+
+                  <span
+                    key={index}
+                    className="tech-badge"
+                  >
+                    {technology}
                   </span>
+
                 ))}
+
               </div>
+
+
 
             </div>
 
+
+
+
           </motion.div>
+
+
         ))}
 
+
+
       </div>
+
+
 
     </section>
   );
 }
+
 
 export default Projects;

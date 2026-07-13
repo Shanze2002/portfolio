@@ -10,42 +10,64 @@ import { SiJavascript } from "react-icons/si";
 
 import profile from "../assets/profile.jpeg";
 
+
 function Hero() {
+
   return (
     <section className="hero" id="home">
 
-      {/* Background */}
+
       <div className="hero-blur blur1"></div>
       <div className="hero-blur blur2"></div>
 
+
+
       <div className="hero-container">
 
-        {/* LEFT */}
+
         <motion.div
           className="hero-left"
-          initial={{ opacity: 0, x: -80 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
+          initial={{
+            opacity: 0,
+            x: -50
+          }}
+          animate={{
+            opacity: 1,
+            x: 0
+          }}
+          transition={{
+            duration: 0.8
+          }}
         >
+
+
           <span className="hero-badge">
-            🟢 Available for Work
+            Software Engineering Undergraduate
           </span>
 
-          <h3>Hello, I'm</h3>
+
+
+          <h3>
+            Hello, I'm
+          </h3>
+
+
 
           <h1>
             Muhammad <span>Anas</span>
           </h1>
 
+
+
           <TypeAnimation
             sequence={[
-              "Software Engineer",
+              "Full Stack Developer",
               2000,
               "React Developer",
               2000,
-              "Frontend Developer",
+              "Software Engineer",
               2000,
-              "UI / UX Enthusiast",
+              "Problem Solver",
               2000,
             ]}
             wrapper="h2"
@@ -54,105 +76,192 @@ function Hero() {
             className="typing"
           />
 
+
+
           <p>
-            Passionate about building beautiful, modern and scalable web
-            applications using React, JavaScript and Node.js. I enjoy
-            creating clean user experiences with high performance and
-            elegant design.
+            I build web applications using modern technologies such as React,
+            JavaScript, Node.js, PHP, and MySQL. I enjoy creating clean,
+            responsive interfaces and developing practical solutions through
+            software.
           </p>
+
+
 
           <div className="hero-buttons">
 
-            <a href="#projects" className="btn-primary">
-              View Projects
+
+            <a 
+              href="#projects" 
+              className="btn-primary"
+            >
+              Explore Projects
             </a>
 
-            <a href="/cv.pdf" className="btn-secondary">
-              Download CV
+
+            <a 
+              href="/cv.pdf" 
+              className="btn-secondary"
+            >
+              View CV
             </a>
+
 
           </div>
+
+
+
 
           <div className="hero-social">
 
-            <a href="https://github.com/Shanze2002">
+
+            <a 
+              href="https://github.com/Shanze2002"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaGithub />
             </a>
 
-            <a href="https://www.linkedin.com/in/muhammad-anas-b613573b0">
+
+
+            <a
+              href="https://www.linkedin.com/in/muhammad-anas-b613573b0"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaLinkedin />
             </a>
 
+
           </div>
+
+
+
 
           <div className="hero-stats">
 
-            <div>
-              <h2>4+</h2>
-              <span>Projects</span>
-            </div>
 
             <div>
-              <h2>2+</h2>
-              <span>Years Learning</span>
+              <h2>
+                4+
+              </h2>
+              <span>
+                Projects
+              </span>
             </div>
 
+
+
             <div>
-              <h2>100%</h2>
-              <span>Commitment</span>
+              <h2>
+                5+
+              </h2>
+              <span>
+                Technologies
+              </span>
             </div>
+
+
+
+            <div>
+              <h2>
+                2+
+              </h2>
+              <span>
+                Years Experience
+              </span>
+            </div>
+
 
           </div>
 
+
+
         </motion.div>
 
-        {/* RIGHT */}
+
+
+
+
 
         <motion.div
           className="hero-right"
-          initial={{ opacity: 0, x: 80 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
+          initial={{
+            opacity: 0,
+            x: 50
+          }}
+          animate={{
+            opacity: 1,
+            x: 0
+          }}
+          transition={{
+            duration: 0.8
+          }}
         >
+
+
+
           <motion.div
             className="profile-card"
             animate={{
-              y: [0, -15, 0],
-              rotate: [0, 2, -2, 0],
+              y: [0, -10, 0]
             }}
             transition={{
-              repeat: Infinity,
-              duration: 5,
+              duration: 4,
+              repeat: Infinity
             }}
           >
-            <img src={profile} alt="Profile" />
+
+
+            <img 
+              src={profile}
+              alt="Muhammad Anas"
+            />
+
+
 
             <div className="ring"></div>
+
+
 
             <div className="tech react">
               <FaReact />
             </div>
 
+
+
             <div className="tech node">
               <FaNodeJs />
             </div>
+
+
 
             <div className="tech js">
               <SiJavascript />
             </div>
 
+
+
           </motion.div>
+
 
         </motion.div>
 
+
       </div>
 
+
+
+
       <div className="scroll-down">
-        Scroll ↓
+        Scroll Down
       </div>
+
+
 
     </section>
   );
 }
+
 
 export default Hero;

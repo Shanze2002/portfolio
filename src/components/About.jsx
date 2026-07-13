@@ -1,99 +1,163 @@
 import { motion } from "framer-motion";
 import {
-  FaUserGraduate,
   FaLaptopCode,
-  FaLightbulb,
-  FaAward,
+  FaDatabase,
+  FaCode,
+  FaRocket,
 } from "react-icons/fa";
 
 function About() {
+
+  const skills = [
+    {
+      icon: <FaLaptopCode />,
+      title: "Full Stack Development",
+      text: "Building responsive web applications using modern frontend and backend technologies."
+    },
+    {
+      icon: <FaCode />,
+      title: "Software Engineering",
+      text: "Applying programming concepts, clean coding practices, and software development principles."
+    },
+    {
+      icon: <FaDatabase />,
+      title: "Database Management",
+      text: "Working with MySQL databases, designing structures, and managing application data."
+    },
+    {
+      icon: <FaRocket />,
+      title: "Continuous Learning",
+      text: "Improving my technical skills by working on academic and personal software projects."
+    }
+  ];
+
+
   return (
     <section className="section about-section" id="about">
 
+
       <motion.div
         className="about-left"
-        initial={{ opacity: 0, x: -80 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+        initial={{
+          opacity: 0,
+          x: -50
+        }}
+        whileInView={{
+          opacity: 1,
+          x: 0
+        }}
+        viewport={{
+          once: true
+        }}
+        transition={{
+          duration: 0.6
+        }}
       >
-        <span className="section-tag">ABOUT ME</span>
+
+        <span className="section-tag">
+          ABOUT ME
+        </span>
+
 
         <h2>
-          Turning <span>Ideas</span> into
-          <br />
-          Digital Experiences
+          Software Engineering
+          <span> Student & Developer</span>
         </h2>
 
-        <p>
-          I am a passionate Software Engineering graduate who enjoys creating
-          modern, responsive, and user-friendly web applications. I love solving
-          real-world problems through clean code and innovative thinking.
-        </p>
 
         <p>
-          My experience includes React, JavaScript, PHP, Java, MySQL and UI/UX
-          design. I focus on writing scalable, maintainable applications while
-          continuously learning new technologies.
+          I am a Software Engineering undergraduate at ICBT Campus with a
+          passion for developing web applications and solving real-world
+          problems through technology.
         </p>
+
+
+        <p>
+          I have experience working with React, JavaScript, PHP, Java, MySQL,
+          and modern development tools. Through academic and personal projects,
+          I have developed skills in frontend development, backend development,
+          database design, and application development.
+        </p>
+
 
         <div className="about-stats">
 
           <div>
-            <h3>4+</h3>
-            <span>Projects</span>
+            <h3>10+</h3>
+            <span>Projects Built</span>
           </div>
 
+
           <div>
-            <h3>3+</h3>
-            <span>Years Learning</span>
+            <h3>5+</h3>
+            <span>Technologies</span>
           </div>
+
 
           <div>
             <h3>100%</h3>
-            <span>Dedication</span>
+            <span>Learning Mindset</span>
           </div>
 
         </div>
 
+
       </motion.div>
+
+
 
       <motion.div
         className="about-right"
-        initial={{ opacity: 0, x: 80 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+        initial={{
+          opacity: 0,
+          x: 50
+        }}
+        whileInView={{
+          opacity: 1,
+          x: 0
+        }}
+        viewport={{
+          once: true
+        }}
+        transition={{
+          duration: 0.6
+        }}
       >
 
-        <div className="about-card">
-          <FaLaptopCode className="about-icon" />
-          <h3>Web Development</h3>
-          <p>Building modern, responsive and scalable web applications.</p>
-        </div>
 
-        <div className="about-card">
-          <FaUserGraduate className="about-icon" />
-          <h3>Education</h3>
-          <p>Software Engineering graduate with strong practical knowledge.</p>
-        </div>
+        {skills.map((skill, index) => (
 
-        <div className="about-card">
-          <FaLightbulb className="about-icon" />
-          <h3>Creative Thinking</h3>
-          <p>Creating elegant solutions with modern UI/UX principles.</p>
-        </div>
+          <div 
+            className="about-card"
+            key={index}
+          >
 
-        <div className="about-card">
-          <FaAward className="about-icon" />
-          <h3>Quality</h3>
-          <p>Focused on clean code, performance and user experience.</p>
-        </div>
+            <div className="about-icon">
+              {skill.icon}
+            </div>
+
+
+            <h3>
+              {skill.title}
+            </h3>
+
+
+            <p>
+              {skill.text}
+            </p>
+
+
+          </div>
+
+        ))}
+
 
       </motion.div>
+
 
     </section>
   );
 }
+
 
 export default About;

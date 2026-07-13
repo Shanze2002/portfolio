@@ -2,48 +2,83 @@ import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 function Navbar() {
+
   const [menuOpen, setMenuOpen] = useState(false);
+
+
+  const navItems = [
+    "Home",
+    "About",
+    "Skills",
+    "Projects",
+    "Experience",
+    "Education",
+    "Services",
+    "Contact"
+  ];
+
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
 
   return (
     <nav className="navbar">
+
 
       <div className="logo">
         Muhammad <span>Anas</span>
       </div>
 
+
+
       <ul className={menuOpen ? "nav-links active" : "nav-links"}>
 
-        <li><a href="#home" onClick={() => setMenuOpen(false)}>Home</a></li>
+        {navItems.map((item) => (
 
-        <li><a href="#about" onClick={() => setMenuOpen(false)}>About</a></li>
+          <li key={item}>
 
-        <li><a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a></li>
+            <a
+              href={`#${item.toLowerCase()}`}
+              onClick={closeMenu}
+            >
+              {item}
+            </a>
 
-        <li><a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a></li>
+          </li>
 
-        <li><a href="#experience" onClick={() => setMenuOpen(false)}>Experience</a></li>
-
-        <li><a href="#education" onClick={() => setMenuOpen(false)}>Education</a></li>
-
-        <li><a href="#services" onClick={() => setMenuOpen(false)}>Services</a></li>
-
-        <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
+        ))}
 
       </ul>
 
-      <a href="#contact" className="hire-btn">
-        Hire Me
+
+
+
+      <a
+        href="#contact"
+        className="hire-btn"
+      >
+        Contact Me
       </a>
 
-      <div
+
+
+
+      <button
         className="menu-btn"
         onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle navigation menu"
       >
+
         {menuOpen ? <FaTimes /> : <FaBars />}
-      </div>
+
+      </button>
+
 
     </nav>
   );
 }
+
 
 export default Navbar;
